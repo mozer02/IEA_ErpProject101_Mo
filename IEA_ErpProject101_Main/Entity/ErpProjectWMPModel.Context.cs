@@ -25,15 +25,14 @@ namespace IEA_ErpProject101_Main.Entity
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<tblCariler> tblCariler { get; set; }
         public virtual DbSet<tblCariGruplari> tblCariGruplari { get; set; }
+        public virtual DbSet<tblCariler> tblCariler { get; set; }
         public virtual DbSet<tblDepartmanlar> tblDepartmanlar { get; set; }
-        public virtual DbSet<tblSehirler> tblSehirler { get; set; }
         public virtual DbSet<tblPersonelDetay> tblPersonelDetay { get; set; }
+        public virtual DbSet<tblSehirler> tblSehirler { get; set; }
         public virtual DbSet<tblStokDurum> tblStokDurum { get; set; }
+        public virtual DbSet<tblStokGirisAlt> tblStokGirisAlt { get; set; }
         public virtual DbSet<tblStokGirisUst> tblStokGirisUst { get; set; }
         public virtual DbSet<tblUrunler> tblUrunler { get; set; }
-        public virtual DbSet<vwStokGiris> vwStokGiris { get; set; }
-        public virtual DbSet<tblStokGirisAlt> tblStokGirisAlt { get; set; }
     }
 }

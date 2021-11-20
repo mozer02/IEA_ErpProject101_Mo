@@ -4,25 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="94507a462fd041129ea342caee019a0f" Name="Diagram1" ZoomLevel="63">
-        <EntityTypeShape EntityType="ErpProjectWMPModel.tblCariler" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ErpProjectWMPModel.tblCariGruplari" Width="1.5" PointX="3.625" PointY="0.875" />
-        <AssociationConnector Association="ErpProjectWMPModel.FK_tblCariler_tblCariGruplari" />
-        <EntityTypeShape EntityType="ErpProjectWMPModel.tblDepartmanlar" Width="1.5" PointX="5.875" PointY="1.125" />
-        <AssociationConnector Association="ErpProjectWMPModel.FK_tblDepartmanlar_tblCariGruplari" />
-        <EntityTypeShape EntityType="ErpProjectWMPModel.tblSehirler" Width="1.5" PointX="3.375" PointY="4.875" />
-        <AssociationConnector Association="ErpProjectWMPModel.FK_tblCariler_tblSehirler" />
-        <EntityTypeShape EntityType="ErpProjectWMPModel.tblPersonelDetay" Width="1.5" PointX="3" PointY="7.75" />
-        <AssociationConnector Association="ErpProjectWMPModel.FK_tblPersonelDetay_tblCariler" />
-        <EntityTypeShape EntityType="ErpProjectWMPModel.tblStokDurum" Width="1.5" PointX="5.375" PointY="11.5" />
-        <EntityTypeShape EntityType="ErpProjectWMPModel.tblStokGirisUst" Width="1.5" PointX="8.875" PointY="0.75" />
-        <AssociationConnector Association="ErpProjectWMPModel.FK_tblStokGirisUst_tblCariGruplari" />
-        <AssociationConnector Association="ErpProjectWMPModel.FK_tblStokGirisUst_tblCariler" />
-        <EntityTypeShape EntityType="ErpProjectWMPModel.tblUrunler" Width="1.5" PointX="3" PointY="10.875" />
-        <AssociationConnector Association="ErpProjectWMPModel.FK_tblUrunler_tblCariler" />
-        <EntityTypeShape EntityType="ErpProjectWMPModel.vwStokGiris" Width="1.5" PointX="5.375" PointY="4.75" />
-        <EntityTypeShape EntityType="ErpProjectWMPModel.tblStokGirisAlt" Width="1.5" PointX="7.375" PointY="5.75" />
-        </Diagram>
+      <Diagram DiagramId="da53c3206d4244c2a5d62f4ca7bbf548" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="ErpProjectWMPModel.tblCariGruplari" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ErpProjectWMPModel.tblCariler" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ErpProjectWMPModel.tblDepartmanlar" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ErpProjectWMPModel.tblPersonelDetay" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ErpProjectWMPModel.tblSehirler" Width="1.5" PointX="3.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ErpProjectWMPModel.tblStokDurum" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ErpProjectWMPModel.tblStokGirisAlt" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ErpProjectWMPModel.tblStokGirisUst" Width="1.5" PointX="11.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ErpProjectWMPModel.tblUrunler" Width="1.5" PointX="8.25" PointY="12.625" IsExpanded="true" />
+        <AssociationConnector Association="ErpProjectWMPModel.FK_tblCariler_tblCariGruplari" ManuallyRouted="false" />
+        <AssociationConnector Association="ErpProjectWMPModel.FK_tblDepartmanlar_tblCariGruplari" ManuallyRouted="false" />
+        <AssociationConnector Association="ErpProjectWMPModel.FK_tblStokGirisUst_tblCariGruplari" ManuallyRouted="false" />
+        <AssociationConnector Association="ErpProjectWMPModel.FK_tblCariler_tblSehirler" ManuallyRouted="false" />
+        <AssociationConnector Association="ErpProjectWMPModel.FK_tblPersonelDetay_tblCariler" ManuallyRouted="false" />
+        <AssociationConnector Association="ErpProjectWMPModel.FK_tblStokGirisUst_tblCariler" ManuallyRouted="false" />
+        <AssociationConnector Association="ErpProjectWMPModel.FK_tblUrunler_tblCariler" ManuallyRouted="false" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

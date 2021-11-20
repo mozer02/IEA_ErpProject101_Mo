@@ -164,9 +164,6 @@
     <Compile Include="Entity\tblUrunler.cs">
       <DependentUpon>ErpProjectWMPModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\vwStokGiris.cs">
-      <DependentUpon>ErpProjectWMPModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Fonksiyonlar\DoktorUnvan.cs" />
     <Compile Include="Fonksiyonlar\enumFirmaTipi.cs" />
     <Compile Include="Fonksiyonlar\enumPersonelUnvan.cs" />
@@ -283,8 +280,8 @@
   <ItemGroup>
     <Content Include="Entity\ErpProjectWMPModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ErpProjectWMPModel.Context.cs</LastGenOutput>
       <DependentUpon>ErpProjectWMPModel.edmx</DependentUpon>
+      <LastGenOutput>ErpProjectWMPModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Entity\ErpProjectWMPModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

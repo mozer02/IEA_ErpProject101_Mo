@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ErpProjectWMPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ErpProjectWMPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblCariGruplari">
           <Key>
             <PropertyRef Name="Id" />
@@ -147,33 +147,6 @@
           <Property Name="UpdateUserId" Type="int" />
           <Property Name="isActive" Type="bit" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ErpProjectWMP.dbo.vwStokGiris' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vwStokGiris">
-          <Key>
-            <PropertyRef Name="Id" />
-            <PropertyRef Name="UstId" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="GenelNo" Type="int" />
-          <Property Name="GrupAdi" Type="nvarchar" MaxLength="50" />
-          <Property Name="CariAdi" Type="nvarchar" MaxLength="100" />
-          <Property Name="GirisTipi" Type="int" />
-          <Property Name="FaturaNo" Type="nvarchar" MaxLength="50" />
-          <Property Name="FaturaTarih" Type="datetime" />
-          <Property Name="Aciklama" Type="nvarchar(max)" />
-          <Property Name="isActive" Type="bit" />
-          <Property Name="SiraNo" Type="int" />
-          <Property Name="Barkod" Type="nvarchar" MaxLength="50" />
-          <Property Name="UrunKodu" Type="nvarchar" MaxLength="50" />
-          <Property Name="LotSeriNo" Type="nvarchar" MaxLength="50" />
-          <Property Name="Adet" Type="int" />
-          <Property Name="Not" Type="nvarchar(max)" />
-          <Property Name="UT" Type="datetime" />
-          <Property Name="SKT" Type="datetime" />
-          <Property Name="AlisFiyat" Type="decimal" Precision="11" Scale="2" />
-          <Property Name="UstId" Type="int" Nullable="false" />
-        </EntityType>
         <Association Name="FK_tblCariler_tblCariGruplari">
           <End Role="tblCariGruplari" Type="Self.tblCariGruplari" Multiplicity="0..1" />
           <End Role="tblCariler" Type="Self.tblCariler" Multiplicity="*" />
@@ -268,29 +241,6 @@ warning 6002: The table/view 'ErpProjectWMP.dbo.vwStokGiris' does not have a pri
           <EntitySet Name="tblStokGirisAlt" EntityType="Self.tblStokGirisAlt" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblStokGirisUst" EntityType="Self.tblStokGirisUst" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblUrunler" EntityType="Self.tblUrunler" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="vwStokGiris" EntityType="Self.vwStokGiris" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vwStokGiris].[Id] AS [Id], 
-    [vwStokGiris].[GenelNo] AS [GenelNo], 
-    [vwStokGiris].[GrupAdi] AS [GrupAdi], 
-    [vwStokGiris].[CariAdi] AS [CariAdi], 
-    [vwStokGiris].[GirisTipi] AS [GirisTipi], 
-    [vwStokGiris].[FaturaNo] AS [FaturaNo], 
-    [vwStokGiris].[FaturaTarih] AS [FaturaTarih], 
-    [vwStokGiris].[Aciklama] AS [Aciklama], 
-    [vwStokGiris].[isActive] AS [isActive], 
-    [vwStokGiris].[SiraNo] AS [SiraNo], 
-    [vwStokGiris].[Barkod] AS [Barkod], 
-    [vwStokGiris].[UrunKodu] AS [UrunKodu], 
-    [vwStokGiris].[LotSeriNo] AS [LotSeriNo], 
-    [vwStokGiris].[Adet] AS [Adet], 
-    [vwStokGiris].[Not] AS [Not], 
-    [vwStokGiris].[UT] AS [UT], 
-    [vwStokGiris].[SKT] AS [SKT], 
-    [vwStokGiris].[AlisFiyat] AS [AlisFiyat], 
-    [vwStokGiris].[UstId] AS [UstId]
-    FROM [dbo].[vwStokGiris] AS [vwStokGiris]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_tblCariler_tblCariGruplari" Association="Self.FK_tblCariler_tblCariGruplari">
             <End Role="tblCariGruplari" EntitySet="tblCariGruplari" />
             <End Role="tblCariler" EntitySet="tblCariler" />
@@ -320,15 +270,28 @@ warning 6002: The table/view 'ErpProjectWMP.dbo.vwStokGiris' does not have a pri
             <End Role="tblUrunler" EntitySet="tblUrunler" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ErpProjectWMPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblCariGruplari">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GrupAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <NavigationProperty Name="tblCariler" Relationship="Self.FK_tblCariler_tblCariGruplari" FromRole="tblCariGruplari" ToRole="tblCariler" />
+          <NavigationProperty Name="tblDepartmanlar" Relationship="Self.FK_tblDepartmanlar_tblCariGruplari" FromRole="tblCariGruplari" ToRole="tblDepartmanlar" />
+          <NavigationProperty Name="tblStokGirisUst" Relationship="Self.FK_tblStokGirisUst_tblCariGruplari" FromRole="tblCariGruplari" ToRole="tblStokGirisUst" />
+        </EntityType>
         <EntityType Name="tblCariler">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CariNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="CariGroupId" Type="Int32" />
           <Property Name="CariTipId" Type="Int32" />
           <Property Name="CariAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -343,93 +306,29 @@ warning 6002: The table/view 'ErpProjectWMP.dbo.vwStokGiris' does not have a pri
           <Property Name="YetkiliAdi1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="YetkiliAdi2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="YetkiliAdi3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="YetkiliTel1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="YetkiliTel2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="YetkiliTel3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="YetkiliMail1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="YetkiliMail2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="YetkiliMail3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="YetkiliDepartmani1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="YetkiliDepartmani2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="YetkiliDepartmani3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YetkiliTel1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="YetkiliTel2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="YetkiliTel3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="YetkiliCep1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="YetkiliCep2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="YetkiliCep3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="YetkiliMail1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YetkiliMail2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YetkiliMail3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SaveUserId" Type="Int32" />
           <Property Name="UpdateUserId" Type="Int32" />
           <Property Name="SaveDate" Type="DateTime" Precision="3" />
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
           <Property Name="isActive" Type="Boolean" />
-          <NavigationProperty Name="tblCariGruplari" Relationship="ErpProjectWMPModel.FK_tblCariler_tblCariGruplari" FromRole="tblCariler" ToRole="tblCariGruplari" />
-          <NavigationProperty Name="tblSehirler" Relationship="ErpProjectWMPModel.FK_tblCariler_tblSehirler" FromRole="tblCariler" ToRole="tblSehirler" />
-          <Property Name="CariNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblPersonelDetay" Relationship="ErpProjectWMPModel.FK_tblPersonelDetay_tblCariler" FromRole="tblCariler" ToRole="tblPersonelDetay" />
-          <NavigationProperty Name="tblStokGirisUst" Relationship="ErpProjectWMPModel.FK_tblStokGirisUst_tblCariler" FromRole="tblCariler" ToRole="tblStokGirisUst" />
-          <NavigationProperty Name="tblUrunler" Relationship="ErpProjectWMPModel.FK_tblUrunler_tblCariler" FromRole="tblCariler" ToRole="tblUrunler" />
+          <NavigationProperty Name="tblCariGruplari" Relationship="Self.FK_tblCariler_tblCariGruplari" FromRole="tblCariler" ToRole="tblCariGruplari" />
+          <NavigationProperty Name="tblSehirler" Relationship="Self.FK_tblCariler_tblSehirler" FromRole="tblCariler" ToRole="tblSehirler" />
+          <NavigationProperty Name="tblPersonelDetay" Relationship="Self.FK_tblPersonelDetay_tblCariler" FromRole="tblCariler" ToRole="tblPersonelDetay" />
+          <NavigationProperty Name="tblStokGirisUst" Relationship="Self.FK_tblStokGirisUst_tblCariler" FromRole="tblCariler" ToRole="tblStokGirisUst" />
+          <NavigationProperty Name="tblUrunler" Relationship="Self.FK_tblUrunler_tblCariler" FromRole="tblCariler" ToRole="tblUrunler" />
         </EntityType>
-        <EntityContainer Name="ErpProjectWMPEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="tblCariler" EntityType="Self.tblCariler" />
-          <EntitySet Name="tblCariGruplari" EntityType="ErpProjectWMPModel.tblCariGruplari" />
-          <AssociationSet Name="FK_tblCariler_tblCariGruplari" Association="ErpProjectWMPModel.FK_tblCariler_tblCariGruplari">
-            <End Role="tblCariGruplari" EntitySet="tblCariGruplari" />
-            <End Role="tblCariler" EntitySet="tblCariler" />
-          </AssociationSet>
-          <EntitySet Name="tblDepartmanlar" EntityType="ErpProjectWMPModel.tblDepartmanlar" />
-          <AssociationSet Name="FK_tblDepartmanlar_tblCariGruplari" Association="ErpProjectWMPModel.FK_tblDepartmanlar_tblCariGruplari">
-            <End Role="tblCariGruplari" EntitySet="tblCariGruplari" />
-            <End Role="tblDepartmanlar" EntitySet="tblDepartmanlar" />
-          </AssociationSet>
-          <EntitySet Name="tblSehirler" EntityType="ErpProjectWMPModel.tblSehirler" />
-          <AssociationSet Name="FK_tblCariler_tblSehirler" Association="ErpProjectWMPModel.FK_tblCariler_tblSehirler">
-            <End Role="tblSehirler" EntitySet="tblSehirler" />
-            <End Role="tblCariler" EntitySet="tblCariler" />
-          </AssociationSet>
-          <EntitySet Name="tblPersonelDetay" EntityType="ErpProjectWMPModel.tblPersonelDetay" />
-          <AssociationSet Name="FK_tblPersonelDetay_tblCariler" Association="ErpProjectWMPModel.FK_tblPersonelDetay_tblCariler">
-            <End Role="tblCariler" EntitySet="tblCariler" />
-            <End Role="tblPersonelDetay" EntitySet="tblPersonelDetay" />
-          </AssociationSet>
-          <EntitySet Name="tblStokDurum" EntityType="ErpProjectWMPModel.tblStokDurum" />
-          <EntitySet Name="tblStokGirisUst" EntityType="ErpProjectWMPModel.tblStokGirisUst" />
-          <AssociationSet Name="FK_tblStokGirisUst_tblCariGruplari" Association="ErpProjectWMPModel.FK_tblStokGirisUst_tblCariGruplari">
-            <End Role="tblCariGruplari" EntitySet="tblCariGruplari" />
-            <End Role="tblStokGirisUst" EntitySet="tblStokGirisUst" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tblStokGirisUst_tblCariler" Association="ErpProjectWMPModel.FK_tblStokGirisUst_tblCariler">
-            <End Role="tblCariler" EntitySet="tblCariler" />
-            <End Role="tblStokGirisUst" EntitySet="tblStokGirisUst" />
-          </AssociationSet>
-          <EntitySet Name="tblUrunler" EntityType="ErpProjectWMPModel.tblUrunler" />
-          <AssociationSet Name="FK_tblUrunler_tblCariler" Association="ErpProjectWMPModel.FK_tblUrunler_tblCariler">
-            <End Role="tblCariler" EntitySet="tblCariler" />
-            <End Role="tblUrunler" EntitySet="tblUrunler" />
-          </AssociationSet>
-          <EntitySet Name="vwStokGiris" EntityType="ErpProjectWMPModel.vwStokGiris" />
-          <EntitySet Name="tblStokGirisAlt" EntityType="ErpProjectWMPModel.tblStokGirisAlt" />
-          </EntityContainer>
-        <EntityType Name="tblCariGruplari">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="GrupAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="isActive" Type="Boolean" />
-          <NavigationProperty Name="tblCariler" Relationship="ErpProjectWMPModel.FK_tblCariler_tblCariGruplari" FromRole="tblCariGruplari" ToRole="tblCariler" />
-          <NavigationProperty Name="tblDepartmanlar" Relationship="ErpProjectWMPModel.FK_tblDepartmanlar_tblCariGruplari" FromRole="tblCariGruplari" ToRole="tblDepartmanlar" />
-          <NavigationProperty Name="tblStokGirisUst" Relationship="ErpProjectWMPModel.FK_tblStokGirisUst_tblCariGruplari" FromRole="tblCariGruplari" ToRole="tblStokGirisUst" />
-        </EntityType>
-        <Association Name="FK_tblCariler_tblCariGruplari">
-          <End Type="ErpProjectWMPModel.tblCariGruplari" Role="tblCariGruplari" Multiplicity="0..1" />
-          <End Type="ErpProjectWMPModel.tblCariler" Role="tblCariler" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblCariGruplari">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="tblCariler">
-              <PropertyRef Name="CariGroupId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="tblDepartmanlar">
           <Key>
             <PropertyRef Name="Id" />
@@ -438,40 +337,8 @@ warning 6002: The table/view 'ErpProjectWMP.dbo.vwStokGiris' does not have a pri
           <Property Name="GrupId" Type="Int32" />
           <Property Name="DepartmanAdi" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
           <Property Name="isActive" Type="Boolean" />
-          <NavigationProperty Name="tblCariGruplari" Relationship="ErpProjectWMPModel.FK_tblDepartmanlar_tblCariGruplari" FromRole="tblDepartmanlar" ToRole="tblCariGruplari" />
+          <NavigationProperty Name="tblCariGruplari" Relationship="Self.FK_tblDepartmanlar_tblCariGruplari" FromRole="tblDepartmanlar" ToRole="tblCariGruplari" />
         </EntityType>
-        <Association Name="FK_tblDepartmanlar_tblCariGruplari">
-          <End Type="ErpProjectWMPModel.tblCariGruplari" Role="tblCariGruplari" Multiplicity="0..1" />
-          <End Type="ErpProjectWMPModel.tblDepartmanlar" Role="tblDepartmanlar" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblCariGruplari">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="tblDepartmanlar">
-              <PropertyRef Name="GrupId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="tblSehirler">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblCariler" Relationship="ErpProjectWMPModel.FK_tblCariler_tblSehirler" FromRole="tblSehirler" ToRole="tblCariler" />
-        </EntityType>
-        <Association Name="FK_tblCariler_tblSehirler">
-          <End Type="ErpProjectWMPModel.tblSehirler" Role="tblSehirler" Multiplicity="0..1" />
-          <End Type="ErpProjectWMPModel.tblCariler" Role="tblCariler" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblSehirler">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="tblCariler">
-              <PropertyRef Name="SehirId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="tblPersonelDetay">
           <Key>
             <PropertyRef Name="Id" />
@@ -480,20 +347,16 @@ warning 6002: The table/view 'ErpProjectWMP.dbo.vwStokGiris' does not have a pri
           <Property Name="CariId" Type="Int32" />
           <Property Name="IsBasiTarih" Type="DateTime" Precision="3" />
           <Property Name="IsSonuTarih" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="tblCariler" Relationship="ErpProjectWMPModel.FK_tblPersonelDetay_tblCariler" FromRole="tblPersonelDetay" ToRole="tblCariler" />
+          <NavigationProperty Name="tblCariler" Relationship="Self.FK_tblPersonelDetay_tblCariler" FromRole="tblPersonelDetay" ToRole="tblCariler" />
         </EntityType>
-        <Association Name="FK_tblPersonelDetay_tblCariler">
-          <End Type="ErpProjectWMPModel.tblCariler" Role="tblCariler" Multiplicity="0..1" />
-          <End Type="ErpProjectWMPModel.tblPersonelDetay" Role="tblPersonelDetay" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblCariler">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="tblPersonelDetay">
-              <PropertyRef Name="CariId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityType Name="tblSehirler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblCariler" Relationship="Self.FK_tblCariler_tblSehirler" FromRole="tblSehirler" ToRole="tblCariler" />
+        </EntityType>
         <EntityType Name="tblStokDurum">
           <Key>
             <PropertyRef Name="Id" />
@@ -509,6 +372,23 @@ warning 6002: The table/view 'ErpProjectWMP.dbo.vwStokGiris' does not have a pri
           <Property Name="SubeAdet" Type="Int32" />
           <Property Name="UT" Type="DateTime" Precision="3" />
           <Property Name="SKT" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblStokGirisAlt">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GenelNo" Type="Int32" />
+          <Property Name="SiraNo" Type="Int32" />
+          <Property Name="Barkod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UrunKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LotSeriNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adet" Type="Int32" />
+          <Property Name="Not" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UT" Type="DateTime" Precision="3" />
+          <Property Name="SKT" Type="DateTime" Precision="3" />
+          <Property Name="AlisFiyat" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="isActiveAlt" Type="Boolean" />
         </EntityType>
         <EntityType Name="tblStokGirisUst">
           <Key>
@@ -527,33 +407,9 @@ warning 6002: The table/view 'ErpProjectWMP.dbo.vwStokGiris' does not have a pri
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
           <Property Name="UpdateUserId" Type="Int32" />
           <Property Name="isActive" Type="Boolean" />
-          <NavigationProperty Name="tblCariGruplari" Relationship="ErpProjectWMPModel.FK_tblStokGirisUst_tblCariGruplari" FromRole="tblStokGirisUst" ToRole="tblCariGruplari" />
-          <NavigationProperty Name="tblCariler" Relationship="ErpProjectWMPModel.FK_tblStokGirisUst_tblCariler" FromRole="tblStokGirisUst" ToRole="tblCariler" />
+          <NavigationProperty Name="tblCariGruplari" Relationship="Self.FK_tblStokGirisUst_tblCariGruplari" FromRole="tblStokGirisUst" ToRole="tblCariGruplari" />
+          <NavigationProperty Name="tblCariler" Relationship="Self.FK_tblStokGirisUst_tblCariler" FromRole="tblStokGirisUst" ToRole="tblCariler" />
         </EntityType>
-        <Association Name="FK_tblStokGirisUst_tblCariGruplari">
-          <End Type="ErpProjectWMPModel.tblCariGruplari" Role="tblCariGruplari" Multiplicity="0..1" />
-          <End Type="ErpProjectWMPModel.tblStokGirisUst" Role="tblStokGirisUst" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblCariGruplari">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="tblStokGirisUst">
-              <PropertyRef Name="CariGrupId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tblStokGirisUst_tblCariler">
-          <End Type="ErpProjectWMPModel.tblCariler" Role="tblCariler" Multiplicity="0..1" />
-          <End Type="ErpProjectWMPModel.tblStokGirisUst" Role="tblStokGirisUst" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblCariler">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="tblStokGirisUst">
-              <PropertyRef Name="CariAdiId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="tblUrunler">
           <Key>
             <PropertyRef Name="Id" />
@@ -573,11 +429,83 @@ warning 6002: The table/view 'ErpProjectWMP.dbo.vwStokGiris' does not have a pri
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
           <Property Name="UpdateUserId" Type="Int32" />
           <Property Name="isActive" Type="Boolean" />
-          <NavigationProperty Name="tblCariler" Relationship="ErpProjectWMPModel.FK_tblUrunler_tblCariler" FromRole="tblUrunler" ToRole="tblCariler" />
+          <NavigationProperty Name="tblCariler" Relationship="Self.FK_tblUrunler_tblCariler" FromRole="tblUrunler" ToRole="tblCariler" />
         </EntityType>
+        <Association Name="FK_tblCariler_tblCariGruplari">
+          <End Role="tblCariGruplari" Type="Self.tblCariGruplari" Multiplicity="0..1" />
+          <End Role="tblCariler" Type="Self.tblCariler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCariGruplari">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblCariler">
+              <PropertyRef Name="CariGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDepartmanlar_tblCariGruplari">
+          <End Role="tblCariGruplari" Type="Self.tblCariGruplari" Multiplicity="0..1" />
+          <End Role="tblDepartmanlar" Type="Self.tblDepartmanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCariGruplari">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblDepartmanlar">
+              <PropertyRef Name="GrupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblStokGirisUst_tblCariGruplari">
+          <End Role="tblCariGruplari" Type="Self.tblCariGruplari" Multiplicity="0..1" />
+          <End Role="tblStokGirisUst" Type="Self.tblStokGirisUst" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCariGruplari">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblStokGirisUst">
+              <PropertyRef Name="CariGrupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblCariler_tblSehirler">
+          <End Role="tblSehirler" Type="Self.tblSehirler" Multiplicity="0..1" />
+          <End Role="tblCariler" Type="Self.tblCariler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSehirler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblCariler">
+              <PropertyRef Name="SehirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPersonelDetay_tblCariler">
+          <End Role="tblCariler" Type="Self.tblCariler" Multiplicity="0..1" />
+          <End Role="tblPersonelDetay" Type="Self.tblPersonelDetay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCariler">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblPersonelDetay">
+              <PropertyRef Name="CariId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblStokGirisUst_tblCariler">
+          <End Role="tblCariler" Type="Self.tblCariler" Multiplicity="0..1" />
+          <End Role="tblStokGirisUst" Type="Self.tblStokGirisUst" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCariler">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblStokGirisUst">
+              <PropertyRef Name="CariAdiId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tblUrunler_tblCariler">
-          <End Type="ErpProjectWMPModel.tblCariler" Role="tblCariler" Multiplicity="0..1" />
-          <End Type="ErpProjectWMPModel.tblUrunler" Role="tblUrunler" Multiplicity="*" />
+          <End Role="tblCariler" Type="Self.tblCariler" Multiplicity="0..1" />
+          <End Role="tblUrunler" Type="Self.tblUrunler" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblCariler">
               <PropertyRef Name="Id" />
@@ -587,70 +515,65 @@ warning 6002: The table/view 'ErpProjectWMP.dbo.vwStokGiris' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="vwStokGiris">
-          <Key>
-            <PropertyRef Name="Id" />
-            <PropertyRef Name="UstId" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="GenelNo" Type="Int32" />
-          <Property Name="GrupAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CariAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="GirisTipi" Type="Int32" />
-          <Property Name="FaturaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FaturaTarih" Type="DateTime" Precision="3" />
-          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="isActive" Type="Boolean" />
-          <Property Name="SiraNo" Type="Int32" />
-          <Property Name="Barkod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UrunKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="LotSeriNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Adet" Type="Int32" />
-          <Property Name="Not" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="UT" Type="DateTime" Precision="3" />
-          <Property Name="SKT" Type="DateTime" Precision="3" />
-          <Property Name="AlisFiyat" Type="Decimal" Precision="11" Scale="2" />
-          <Property Name="UstId" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tblStokGirisAlt">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="GenelNo" Type="Int32" />
-          <Property Name="SiraNo" Type="Int32" />
-          <Property Name="Barkod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UrunKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="LotSeriNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Adet" Type="Int32" />
-          <Property Name="Not" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="UT" Type="DateTime" Precision="3" />
-          <Property Name="SKT" Type="DateTime" Precision="3" />
-          <Property Name="AlisFiyat" Type="Decimal" Precision="11" Scale="2" />
-          <Property Name="isActiveAlt" Type="Boolean" />
-        </EntityType>
-        </Schema>
+        <EntityContainer Name="ErpProjectWMPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblCariGruplari" EntityType="Self.tblCariGruplari" />
+          <EntitySet Name="tblCariler" EntityType="Self.tblCariler" />
+          <EntitySet Name="tblDepartmanlar" EntityType="Self.tblDepartmanlar" />
+          <EntitySet Name="tblPersonelDetay" EntityType="Self.tblPersonelDetay" />
+          <EntitySet Name="tblSehirler" EntityType="Self.tblSehirler" />
+          <EntitySet Name="tblStokDurum" EntityType="Self.tblStokDurum" />
+          <EntitySet Name="tblStokGirisAlt" EntityType="Self.tblStokGirisAlt" />
+          <EntitySet Name="tblStokGirisUst" EntityType="Self.tblStokGirisUst" />
+          <EntitySet Name="tblUrunler" EntityType="Self.tblUrunler" />
+          <AssociationSet Name="FK_tblCariler_tblCariGruplari" Association="Self.FK_tblCariler_tblCariGruplari">
+            <End Role="tblCariGruplari" EntitySet="tblCariGruplari" />
+            <End Role="tblCariler" EntitySet="tblCariler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDepartmanlar_tblCariGruplari" Association="Self.FK_tblDepartmanlar_tblCariGruplari">
+            <End Role="tblCariGruplari" EntitySet="tblCariGruplari" />
+            <End Role="tblDepartmanlar" EntitySet="tblDepartmanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblStokGirisUst_tblCariGruplari" Association="Self.FK_tblStokGirisUst_tblCariGruplari">
+            <End Role="tblCariGruplari" EntitySet="tblCariGruplari" />
+            <End Role="tblStokGirisUst" EntitySet="tblStokGirisUst" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblCariler_tblSehirler" Association="Self.FK_tblCariler_tblSehirler">
+            <End Role="tblSehirler" EntitySet="tblSehirler" />
+            <End Role="tblCariler" EntitySet="tblCariler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPersonelDetay_tblCariler" Association="Self.FK_tblPersonelDetay_tblCariler">
+            <End Role="tblCariler" EntitySet="tblCariler" />
+            <End Role="tblPersonelDetay" EntitySet="tblPersonelDetay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblStokGirisUst_tblCariler" Association="Self.FK_tblStokGirisUst_tblCariler">
+            <End Role="tblCariler" EntitySet="tblCariler" />
+            <End Role="tblStokGirisUst" EntitySet="tblStokGirisUst" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUrunler_tblCariler" Association="Self.FK_tblUrunler_tblCariler">
+            <End Role="tblCariler" EntitySet="tblCariler" />
+            <End Role="tblUrunler" EntitySet="tblUrunler" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ErpProjectWMPModelStoreContainer" CdmEntityContainer="ErpProjectWMPEntities">
+          <EntitySetMapping Name="tblCariGruplari">
+            <EntityTypeMapping TypeName="ErpProjectWMPModel.tblCariGruplari">
+              <MappingFragment StoreEntitySet="tblCariGruplari">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GrupAdi" ColumnName="GrupAdi" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tblCariler">
             <EntityTypeMapping TypeName="ErpProjectWMPModel.tblCariler">
               <MappingFragment StoreEntitySet="tblCariler">
-                <ScalarProperty Name="CariNo" ColumnName="CariNo" />
-                <ScalarProperty Name="isActive" ColumnName="isActive" />
-                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
-                <ScalarProperty Name="SaveDate" ColumnName="SaveDate" />
-                <ScalarProperty Name="UpdateUserId" ColumnName="UpdateUserId" />
-                <ScalarProperty Name="SaveUserId" ColumnName="SaveUserId" />
-                <ScalarProperty Name="YetkiliCep3" ColumnName="YetkiliCep3" />
-                <ScalarProperty Name="YetkiliCep2" ColumnName="YetkiliCep2" />
-                <ScalarProperty Name="YetkiliCep1" ColumnName="YetkiliCep1" />
-                <ScalarProperty Name="YetkiliDepartmani3" ColumnName="YetkiliDepartmani3" />
-                <ScalarProperty Name="YetkiliDepartmani2" ColumnName="YetkiliDepartmani2" />
-                <ScalarProperty Name="YetkiliDepartmani1" ColumnName="YetkiliDepartmani1" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CariNo" ColumnName="CariNo" />
                 <ScalarProperty Name="CariGroupId" ColumnName="CariGroupId" />
                 <ScalarProperty Name="CariTipId" ColumnName="CariTipId" />
                 <ScalarProperty Name="CariAdi" ColumnName="CariAdi" />
@@ -665,149 +588,126 @@ warning 6002: The table/view 'ErpProjectWMP.dbo.vwStokGiris' does not have a pri
                 <ScalarProperty Name="YetkiliAdi1" ColumnName="YetkiliAdi1" />
                 <ScalarProperty Name="YetkiliAdi2" ColumnName="YetkiliAdi2" />
                 <ScalarProperty Name="YetkiliAdi3" ColumnName="YetkiliAdi3" />
+                <ScalarProperty Name="YetkiliDepartmani1" ColumnName="YetkiliDepartmani1" />
+                <ScalarProperty Name="YetkiliDepartmani2" ColumnName="YetkiliDepartmani2" />
+                <ScalarProperty Name="YetkiliDepartmani3" ColumnName="YetkiliDepartmani3" />
                 <ScalarProperty Name="YetkiliTel1" ColumnName="YetkiliTel1" />
                 <ScalarProperty Name="YetkiliTel2" ColumnName="YetkiliTel2" />
                 <ScalarProperty Name="YetkiliTel3" ColumnName="YetkiliTel3" />
+                <ScalarProperty Name="YetkiliCep1" ColumnName="YetkiliCep1" />
+                <ScalarProperty Name="YetkiliCep2" ColumnName="YetkiliCep2" />
+                <ScalarProperty Name="YetkiliCep3" ColumnName="YetkiliCep3" />
                 <ScalarProperty Name="YetkiliMail1" ColumnName="YetkiliMail1" />
                 <ScalarProperty Name="YetkiliMail2" ColumnName="YetkiliMail2" />
                 <ScalarProperty Name="YetkiliMail3" ColumnName="YetkiliMail3" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblCariGruplari">
-            <EntityTypeMapping TypeName="ErpProjectWMPModel.tblCariGruplari">
-              <MappingFragment StoreEntitySet="tblCariGruplari">
+                <ScalarProperty Name="SaveUserId" ColumnName="SaveUserId" />
+                <ScalarProperty Name="UpdateUserId" ColumnName="UpdateUserId" />
+                <ScalarProperty Name="SaveDate" ColumnName="SaveDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
                 <ScalarProperty Name="isActive" ColumnName="isActive" />
-                <ScalarProperty Name="GrupAdi" ColumnName="GrupAdi" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblDepartmanlar">
             <EntityTypeMapping TypeName="ErpProjectWMPModel.tblDepartmanlar">
               <MappingFragment StoreEntitySet="tblDepartmanlar">
-                <ScalarProperty Name="isActive" ColumnName="isActive" />
-                <ScalarProperty Name="DepartmanAdi" ColumnName="DepartmanAdi" />
-                <ScalarProperty Name="GrupId" ColumnName="GrupId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblSehirler">
-            <EntityTypeMapping TypeName="ErpProjectWMPModel.tblSehirler">
-              <MappingFragment StoreEntitySet="tblSehirler">
-                <ScalarProperty Name="sehir" ColumnName="sehir" />
-                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="GrupId" ColumnName="GrupId" />
+                <ScalarProperty Name="DepartmanAdi" ColumnName="DepartmanAdi" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblPersonelDetay">
             <EntityTypeMapping TypeName="ErpProjectWMPModel.tblPersonelDetay">
               <MappingFragment StoreEntitySet="tblPersonelDetay">
-                <ScalarProperty Name="IsSonuTarih" ColumnName="IsSonuTarih" />
-                <ScalarProperty Name="IsBasiTarih" ColumnName="IsBasiTarih" />
-                <ScalarProperty Name="CariId" ColumnName="CariId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CariId" ColumnName="CariId" />
+                <ScalarProperty Name="IsBasiTarih" ColumnName="IsBasiTarih" />
+                <ScalarProperty Name="IsSonuTarih" ColumnName="IsSonuTarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSehirler">
+            <EntityTypeMapping TypeName="ErpProjectWMPModel.tblSehirler">
+              <MappingFragment StoreEntitySet="tblSehirler">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblStokDurum">
             <EntityTypeMapping TypeName="ErpProjectWMPModel.tblStokDurum">
               <MappingFragment StoreEntitySet="tblStokDurum">
-                <ScalarProperty Name="SKT" ColumnName="SKT" />
-                <ScalarProperty Name="UT" ColumnName="UT" />
-                <ScalarProperty Name="SubeAdet" ColumnName="SubeAdet" />
-                <ScalarProperty Name="KonsinyeAdet" ColumnName="KonsinyeAdet" />
-                <ScalarProperty Name="RafAdet" ColumnName="RafAdet" />
-                <ScalarProperty Name="StokAdet" ColumnName="StokAdet" />
-                <ScalarProperty Name="Lot" ColumnName="Lot" />
-                <ScalarProperty Name="Urun" ColumnName="Urun" />
-                <ScalarProperty Name="Barkod" ColumnName="Barkod" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="StokKodu" ColumnName="StokKodu" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblStokGirisUst">
-            <EntityTypeMapping TypeName="ErpProjectWMPModel.tblStokGirisUst">
-              <MappingFragment StoreEntitySet="tblStokGirisUst">
-                <ScalarProperty Name="isActive" ColumnName="isActive" />
-                <ScalarProperty Name="UpdateUserId" ColumnName="UpdateUserId" />
-                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
-                <ScalarProperty Name="SaveUserId" ColumnName="SaveUserId" />
-                <ScalarProperty Name="SaveDate" ColumnName="SaveDate" />
-                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
-                <ScalarProperty Name="FaturaTarih" ColumnName="FaturaTarih" />
-                <ScalarProperty Name="FaturaNo" ColumnName="FaturaNo" />
-                <ScalarProperty Name="GirisTipi" ColumnName="GirisTipi" />
-                <ScalarProperty Name="CariAdiId" ColumnName="CariAdiId" />
-                <ScalarProperty Name="CariGrupId" ColumnName="CariGrupId" />
-                <ScalarProperty Name="GenelNo" ColumnName="GenelNo" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblUrunler">
-            <EntityTypeMapping TypeName="ErpProjectWMPModel.tblUrunler">
-              <MappingFragment StoreEntitySet="tblUrunler">
-                <ScalarProperty Name="isActive" ColumnName="isActive" />
-                <ScalarProperty Name="UpdateUserId" ColumnName="UpdateUserId" />
-                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
-                <ScalarProperty Name="SaveUserId" ColumnName="SaveUserId" />
-                <ScalarProperty Name="SaveDate" ColumnName="SaveDate" />
-                <ScalarProperty Name="KullanimSuresiAy" ColumnName="KullanimSuresiAy" />
-                <ScalarProperty Name="SatisFiyat" ColumnName="SatisFiyat" />
-                <ScalarProperty Name="AlisFiyat" ColumnName="AlisFiyat" />
-                <ScalarProperty Name="TedarikciFirmaId" ColumnName="TedarikciFirmaId" />
-                <ScalarProperty Name="KutuIcerik" ColumnName="KutuIcerik" />
-                <ScalarProperty Name="UrunAciklama" ColumnName="UrunAciklama" />
-                <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
-                <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
-                <ScalarProperty Name="UrunGenelNo" ColumnName="UrunGenelNo" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vwStokGiris">
-            <EntityTypeMapping TypeName="ErpProjectWMPModel.vwStokGiris">
-              <MappingFragment StoreEntitySet="vwStokGiris">
-                <ScalarProperty Name="UstId" ColumnName="UstId" />
-                <ScalarProperty Name="AlisFiyat" ColumnName="AlisFiyat" />
-                <ScalarProperty Name="SKT" ColumnName="SKT" />
-                <ScalarProperty Name="UT" ColumnName="UT" />
-                <ScalarProperty Name="Not" ColumnName="Not" />
-                <ScalarProperty Name="Adet" ColumnName="Adet" />
-                <ScalarProperty Name="LotSeriNo" ColumnName="LotSeriNo" />
-                <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
                 <ScalarProperty Name="Barkod" ColumnName="Barkod" />
-                <ScalarProperty Name="SiraNo" ColumnName="SiraNo" />
-                <ScalarProperty Name="isActive" ColumnName="isActive" />
-                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
-                <ScalarProperty Name="FaturaTarih" ColumnName="FaturaTarih" />
-                <ScalarProperty Name="FaturaNo" ColumnName="FaturaNo" />
-                <ScalarProperty Name="GirisTipi" ColumnName="GirisTipi" />
-                <ScalarProperty Name="CariAdi" ColumnName="CariAdi" />
-                <ScalarProperty Name="GrupAdi" ColumnName="GrupAdi" />
-                <ScalarProperty Name="GenelNo" ColumnName="GenelNo" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Urun" ColumnName="Urun" />
+                <ScalarProperty Name="Lot" ColumnName="Lot" />
+                <ScalarProperty Name="StokAdet" ColumnName="StokAdet" />
+                <ScalarProperty Name="RafAdet" ColumnName="RafAdet" />
+                <ScalarProperty Name="KonsinyeAdet" ColumnName="KonsinyeAdet" />
+                <ScalarProperty Name="SubeAdet" ColumnName="SubeAdet" />
+                <ScalarProperty Name="UT" ColumnName="UT" />
+                <ScalarProperty Name="SKT" ColumnName="SKT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblStokGirisAlt">
             <EntityTypeMapping TypeName="ErpProjectWMPModel.tblStokGirisAlt">
               <MappingFragment StoreEntitySet="tblStokGirisAlt">
-                <ScalarProperty Name="isActiveAlt" ColumnName="isActiveAlt" />
-                <ScalarProperty Name="AlisFiyat" ColumnName="AlisFiyat" />
-                <ScalarProperty Name="SKT" ColumnName="SKT" />
-                <ScalarProperty Name="UT" ColumnName="UT" />
-                <ScalarProperty Name="Not" ColumnName="Not" />
-                <ScalarProperty Name="Adet" ColumnName="Adet" />
-                <ScalarProperty Name="LotSeriNo" ColumnName="LotSeriNo" />
-                <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
-                <ScalarProperty Name="Barkod" ColumnName="Barkod" />
-                <ScalarProperty Name="SiraNo" ColumnName="SiraNo" />
-                <ScalarProperty Name="GenelNo" ColumnName="GenelNo" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GenelNo" ColumnName="GenelNo" />
+                <ScalarProperty Name="SiraNo" ColumnName="SiraNo" />
+                <ScalarProperty Name="Barkod" ColumnName="Barkod" />
+                <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
+                <ScalarProperty Name="LotSeriNo" ColumnName="LotSeriNo" />
+                <ScalarProperty Name="Adet" ColumnName="Adet" />
+                <ScalarProperty Name="Not" ColumnName="Not" />
+                <ScalarProperty Name="UT" ColumnName="UT" />
+                <ScalarProperty Name="SKT" ColumnName="SKT" />
+                <ScalarProperty Name="AlisFiyat" ColumnName="AlisFiyat" />
+                <ScalarProperty Name="isActiveAlt" ColumnName="isActiveAlt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblStokGirisUst">
+            <EntityTypeMapping TypeName="ErpProjectWMPModel.tblStokGirisUst">
+              <MappingFragment StoreEntitySet="tblStokGirisUst">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GenelNo" ColumnName="GenelNo" />
+                <ScalarProperty Name="CariGrupId" ColumnName="CariGrupId" />
+                <ScalarProperty Name="CariAdiId" ColumnName="CariAdiId" />
+                <ScalarProperty Name="GirisTipi" ColumnName="GirisTipi" />
+                <ScalarProperty Name="FaturaNo" ColumnName="FaturaNo" />
+                <ScalarProperty Name="FaturaTarih" ColumnName="FaturaTarih" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="SaveDate" ColumnName="SaveDate" />
+                <ScalarProperty Name="SaveUserId" ColumnName="SaveUserId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserId" ColumnName="UpdateUserId" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUrunler">
+            <EntityTypeMapping TypeName="ErpProjectWMPModel.tblUrunler">
+              <MappingFragment StoreEntitySet="tblUrunler">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UrunGenelNo" ColumnName="UrunGenelNo" />
+                <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
+                <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+                <ScalarProperty Name="UrunAciklama" ColumnName="UrunAciklama" />
+                <ScalarProperty Name="KutuIcerik" ColumnName="KutuIcerik" />
+                <ScalarProperty Name="TedarikciFirmaId" ColumnName="TedarikciFirmaId" />
+                <ScalarProperty Name="AlisFiyat" ColumnName="AlisFiyat" />
+                <ScalarProperty Name="SatisFiyat" ColumnName="SatisFiyat" />
+                <ScalarProperty Name="KullanimSuresiAy" ColumnName="KullanimSuresiAy" />
+                <ScalarProperty Name="SaveDate" ColumnName="SaveDate" />
+                <ScalarProperty Name="SaveUserId" ColumnName="SaveUserId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserId" ColumnName="UpdateUserId" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
