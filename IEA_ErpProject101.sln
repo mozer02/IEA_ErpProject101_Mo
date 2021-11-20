@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IEA_ErpProject101_Main", "IEA_ErpProject101_Main\IEA_ErpProject101_Main.csproj", "{B2F94A14-86E3-44FA-A9CE-1840BAEB1E92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritances", "Inheritances\Inheritances.csproj", "{1A72FC84-E1FC-4650-B77A-35885815B577}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{C120105F-E1FF-4BF7-94BC-84ED26427F77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceMulti", "InterfaceMulti\InterfaceMulti.csproj", "{AF0C9087-02B0-42C8-8F39-7CDA66CFC250}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractClasses", "AbstractClasses\AbstractClasses.csproj", "{3B016ADF-6269-44BF-AAB8-C8C2B5D6F353}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualMethods", "VirtualMethods\VirtualMethods.csproj", "{9C8CA95F-FA7F-4D87-B74E-056F39520621}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2F94A14-86E3-44FA-A9CE-1840BAEB1E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2F94A14-86E3-44FA-A9CE-1840BAEB1E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2F94A14-86E3-44FA-A9CE-1840BAEB1E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2F94A14-86E3-44FA-A9CE-1840BAEB1E92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A72FC84-E1FC-4650-B77A-35885815B577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A72FC84-E1FC-4650-B77A-35885815B577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A72FC84-E1FC-4650-B77A-35885815B577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A72FC84-E1FC-4650-B77A-35885815B577}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C120105F-E1FF-4BF7-94BC-84ED26427F77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C120105F-E1FF-4BF7-94BC-84ED26427F77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C120105F-E1FF-4BF7-94BC-84ED26427F77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C120105F-E1FF-4BF7-94BC-84ED26427F77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF0C9087-02B0-42C8-8F39-7CDA66CFC250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF0C9087-02B0-42C8-8F39-7CDA66CFC250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF0C9087-02B0-42C8-8F39-7CDA66CFC250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF0C9087-02B0-42C8-8F39-7CDA66CFC250}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B016ADF-6269-44BF-AAB8-C8C2B5D6F353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B016ADF-6269-44BF-AAB8-C8C2B5D6F353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B016ADF-6269-44BF-AAB8-C8C2B5D6F353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B016ADF-6269-44BF-AAB8-C8C2B5D6F353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C8CA95F-FA7F-4D87-B74E-056F39520621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C8CA95F-FA7F-4D87-B74E-056F39520621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C8CA95F-FA7F-4D87-B74E-056F39520621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C8CA95F-FA7F-4D87-B74E-056F39520621}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {55870691-58C1-48FF-8C2B-7382CE8C5EC9}
+	EndGlobalSection
+EndGlobal
