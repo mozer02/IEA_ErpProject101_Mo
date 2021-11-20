@@ -262,7 +262,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SQLYedek\ErpProjectWMP.bak" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -288,13 +287,8 @@
       <DependentUpon>ErpProjectWMPModel.edmx</DependentUpon>
       <LastGenOutput>ErpProjectWMPModel.cs</LastGenOutput>
     </Content>
-    <Content Include="SQLYedek\yedek161121.sql" />
-    <Content Include="SQLYedek\yedek171121.sql" />
-    <Content Include="SQLYedek\yedek181121.sql" />
-    <Content Include="SQLYedek\yedek191121.sql" />
     <None Include="Images\Save24x24y.png" />
     <Content Include="OdevDosyasi.txt" />
-    <Content Include="SQLYedek\Yedek151121.sql" />
     <None Include="Resources\arrow-1176.bmp" />
     <None Include="Images\Sil64.png" />
     <None Include="Images\Sil24x24.png" />

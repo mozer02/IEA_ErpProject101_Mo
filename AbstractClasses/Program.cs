@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AbstractClasses
 {
@@ -33,7 +29,7 @@ namespace AbstractClasses
         public abstract void Deleted(); //Tamamlanmamis metod
     }
 
-    class MsSql:Database
+    class MsSql : Database
     {
         //Abstract dedigimiz sey ici dolu olmaya virtual metoddur.
         public override void Deleted()
