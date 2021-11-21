@@ -100,20 +100,42 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             try
             {
                 #region Stok Giris Ust Tablosuna kayit
-                tblStokGirisUst ust = new tblStokGirisUst
+                if (db.tblStokGirisUst.First(x => x.GenelNo.ToString() == txtGenelNo.Text) == null)
                 {
-                    GenelNo = int.Parse(txtGenelNo.Text),
-                    CariGrupId = (int)txtCariGrup.SelectedValue,
-                    CariAdiId = db.tblCariler.First(x => x.CariAdi == txtCariAdi.Text).Id,
-                    GirisTipi = (int)txtGirisTipi.SelectedValue,
-                    FaturaNo = txtFaturaNo.Text,
-                    FaturaTarih = txtGirisTarih.Value,
-                    Aciklama = txtAciklama.Text,
-                    isActive = true,
-                    SaveDate = DateTime.Now,
-                    SaveUserId = 1
-                };
-                db.tblStokGirisUst.Add(ust);
+                    tblStokGirisUst ust = new tblStokGirisUst
+                    {
+                        GenelNo = int.Parse(txtGenelNo.Text),
+                        CariGrupId = (int)txtCariGrup.SelectedValue,
+                        CariAdiId = db.tblCariler.First(x => x.CariAdi == txtCariAdi.Text).Id,
+                        GirisTipi = (int)txtGirisTipi.SelectedValue,
+                        FaturaNo = txtFaturaNo.Text,
+                        FaturaTarih = txtGirisTarih.Value,
+                        Aciklama = txtAciklama.Text,
+                        isActive = true,
+                        SaveDate = DateTime.Now,
+                        SaveUserId = 1
+                    };
+                    db.tblStokGirisUst.Add(ust);
+                }
+                else
+                {
+                    int a = Convert.ToInt32(txtGenelNo.Text);
+                    tblStokGirisUst bulId = db.tblStokGirisUst.First(x=>x.GenelNo.Value==a);
+                    bulId.GenelNo = int.Parse(txtGenelNo.Text);
+                    bulId.CariGrupId = (int)txtCariGrup.SelectedValue;
+                    bulId.CariAdiId = db.tblCariler.First(x => x.CariAdi == txtCariAdi.Text).Id;
+                    bulId.GirisTipi = (int)txtGirisTipi.SelectedValue;
+                    bulId.FaturaNo = txtFaturaNo.Text;
+                    bulId.FaturaTarih = txtGirisTarih.Value;
+                    bulId.Aciklama = txtAciklama.Text;
+                    bulId.isActive = true;
+                    bulId.SaveDate = DateTime.Now;
+                    bulId.SaveUserId = 1;
+
+                    db.SaveChanges();
+                }
+
+
                 //db.SaveChanges(); 
                 #endregion
 
@@ -193,7 +215,7 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             ust.GenelNo = int.Parse(txtGenelNo.Text);
             ust.CariGrupId = (int)txtCariGrup.SelectedValue;
             ust.CariAdiId = db.tblCariler.First(x => x.CariAdi == txtCariAdi.Text).Id;
-            ust.GirisTipi = (int)txtGirisTipi.SelectedValue-1;
+            ust.GirisTipi = (int)txtGirisTipi.SelectedValue - 1;
             ust.FaturaNo = txtFaturaNo.Text;
             ust.FaturaTarih = txtGirisTarih.Value;
             ust.Aciklama = txtAciklama.Text;
@@ -201,7 +223,7 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             ust.UpdateDate = DateTime.Now;
             ust.UpdateUserId = 1;
 
-            
+
 
             db.SaveChanges();
             //for (int i = 0; i < Liste2.RowCount; i++)
@@ -501,12 +523,12 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
         private void Liste_DoubleClick(object sender, EventArgs e)
         {
             secimId = (int)Liste.CurrentRow.Cells[9].Value;
-            if (secimId>0)
+            if (secimId > 0)
             {
                 Home.Aktarma = secimId;
                 f.StokGuncelleAc();
             }
-            
+
         }
     }
 }
